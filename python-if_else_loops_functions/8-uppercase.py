@@ -10,4 +10,4 @@ def uppercase(str):
             result += char
     print("{}".format(result), end="")
     if index == len(str) - 1:
-        print()
+        print("\n")
