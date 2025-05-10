@@ -16,7 +16,7 @@ def display_args():
         print("{} arguments:".format(argc))
     # we here used enumrate to have a tuple like (index, count)
     # so we can fill them inside the formar
-    for count, command in enumerate(args, start = 1):
+    for count, command in enumerate(args, start=1):
         print("{}: {}".format(count, command))
 
 
