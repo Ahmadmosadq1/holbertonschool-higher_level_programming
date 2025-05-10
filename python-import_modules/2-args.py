@@ -6,7 +6,7 @@ def display_args():
     # Importing Sys library so we can use argv method starts from 0
     args = sys.argv[1:]
     # counting the number of arguments passed in the shell by the user
-    argc = len(sys.argv)
+    argc = len(sys.argv) - 1
     # After couinting the args, we put(number argument/s)
     if argc == 0:
         print("{} arguments:".format(argc))
