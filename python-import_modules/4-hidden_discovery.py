@@ -6,7 +6,7 @@ import sys
 
 def hidden_discovery():
     # we first load the compiled module froma /tmp/ path
-    spec = importlib.util.spec_from_file_location("4_hidden", "hidden_4.pyc")
+    spec = importlib.util.spec_from_file_location("hidden_4", "/tmp/hidden_4.pyc")
     hidden = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(hidden)
 
