@@ -9,7 +9,7 @@ def display_args():
     argc = len(sys.argv) - 1
     # After couinting the args, we put(number argument/s)
     if argc == 0:
-        print("{} arguments:".format(argc))
+        print("{} arguments.".format(argc))
     elif argc == 1:
         print("{} argument:".format(argc))
     elif argc > 1:
