@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 # since we will be using all the funtions, no need to use "from"
-from  calculator_1 import add, sub, mul, div
+from calculator_1 import add, sub, mul, div
 
 # making a gaurd for the library
 if __name__ == "__main__":
