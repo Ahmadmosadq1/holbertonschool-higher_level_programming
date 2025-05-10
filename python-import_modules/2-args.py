@@ -6,7 +6,7 @@ def display_args():
     # Importing Sys library so we can use argv method starts from 0
     args = sys.argv[1:]
     # counting the number of arguments passed in the shell by the user
-    argc = len(sys.argv) - 1
+    argc = len(sys.argv)
     # After couinting the args, we put(number argument/s)
     if argc == 0:
         print("{} arguments:".format(argc))
@@ -16,8 +16,8 @@ def display_args():
         print("{} arguments:".format(argc))
     # we here used enumrate to have a tuple like (index, count)
     # so we can fill them inside the formar
-    for index, count in enumerate(args):
-        print("{}: {}".format(index, count))
+    for count, command in enumerate(args, start = 1):
+        print("{}: {}".format(count, command))
 
 
 if __name__ == "__main__":
