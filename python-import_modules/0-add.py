@@ -4,7 +4,7 @@
 from add_0 import add
 
 # By default, when you import a module in a main file, it execute all lines
-# To ensure thia does not happen, we have to make a gaurd condition 
+# To ensure thia does not happen, we have to make a gaurd condition
 if __name__ == "__main__":
     a = 1
     b = 2
