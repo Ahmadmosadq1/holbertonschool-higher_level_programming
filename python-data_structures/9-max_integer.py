@@ -7,7 +7,7 @@ def max_integer(my_list=[]):
     # we assume the first element is the biggiest one for now
     biggest_int = my_list[0]
     # looping the list
-    for idx in range(len(my_list) - 1):
+    for idx in range(len(my_list)):
         # comparing each idex with max value
         if my_list[idx] > biggest_int:
             biggest_int = my_list[idx]
