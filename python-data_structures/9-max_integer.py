@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 def max_integer(my_list=[]):
-    if len(my_list) == None:
-        return []
+    if len(my_list) == 0:
+        return None
     # Creating a varaible to store the biggest integer
     # we assume the first element is the biggiest one for now
     biggest_int = my_list[0]
