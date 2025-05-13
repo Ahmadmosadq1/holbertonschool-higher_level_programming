@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def no_c(my_string):
     # Strings are not mutable so we have to enumerate the string
     # enumarte will turn each element to a tuple of (indx, element)
