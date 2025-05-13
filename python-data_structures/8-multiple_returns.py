@@ -9,4 +9,3 @@ def multiple_returns(sentence):
         first_char = sentence[0]
     # we tuple over a list since tuple accepts only  argument
     return (str_length, first_char)
-    
