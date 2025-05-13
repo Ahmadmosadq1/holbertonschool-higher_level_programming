@@ -7,10 +7,11 @@ def element_at(my_list, idx):
         return None
         # you use "return"  only without None.
 
-    elif my_list[idx] < 0:
+    elif idx < 0:
         # if the index is negative
         return
 
     else:
-        # if index is out of range:
+        # Just print the index element
         return my_list[idx]
+
