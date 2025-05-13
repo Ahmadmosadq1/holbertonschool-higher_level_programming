@@ -14,4 +14,3 @@ def element_at(my_list, idx):
     else:
         # Just print the index element
         return my_list[idx]
-
