@@ -9,8 +9,5 @@ def safe_print_list_integers(my_list=[], x=0):
         # in case we encounted a value/type errors, we skip it
         except (ValueError, TypeError):
             continue
-        # If the index is out of range, we break out of the loop
-        except IndexError:
-            break
     print()
     return count
