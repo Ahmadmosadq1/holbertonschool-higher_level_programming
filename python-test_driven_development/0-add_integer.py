@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 def add_integer(a, b=98):
     """ Addition function that takes 2 arguments and adds them.
-
+    Args:
+        a: First number (integer or float)
+        b: Second number (integer or float)
+    
     Returns:
         int: the sum of the two arguments
 
