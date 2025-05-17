@@ -15,3 +15,7 @@ TypeError: div must be a number
 Traceback (most recent call last):
     ...
 TypeError: div must be a number
+>>> matrix_divided([[1, 2], [3, 4]], 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
