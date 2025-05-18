@@ -26,6 +26,6 @@ def text_indentation(text):
         print(text[index], end="")
         if text[index] in ".?:":
             print("\n\n", end="")
-            if index + 1 < len(text) and text[index+1] == " ":
+            while index + 1 < len(text) and text[index+1] == " ":
                 text = text[:index+1] + text[index+2:]
         index += 1
