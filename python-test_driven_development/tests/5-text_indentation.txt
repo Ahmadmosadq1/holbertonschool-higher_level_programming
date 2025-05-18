@@ -42,3 +42,6 @@ School?
 How are you:
 <BLANKLINE>
 John
+>>> text_indentation(565)
+Traceback (most recent call last):
+TypeError: text must be a string
