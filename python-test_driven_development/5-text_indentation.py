@@ -21,7 +21,11 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for letter in text:
-        print(letter, end="")
-        if letter in ".?:":
-            print()
+    index = 0
+    while index < len(text):
+        print(text[index], end="")
+        if text[index] in ".?:":
+            print("\n\n", end="")
+            if index + 1 < len(text) and text[index+1] == " ":
+                text = text[:index+1] + text[index+2:]
+        index += 1
