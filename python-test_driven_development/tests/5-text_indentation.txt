@@ -22,9 +22,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
  Sin aliud quid voles, postea.
  Quae animi affectio suum cuique tribuens atque hanc, quam dico.
  Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
- >>> print("Holberton.School")
+ >>> text_indentation("Holberton.School")
  Holberton.
  School
- >>> print("Holberton?School")
+ >>> text_indentation("Holberton?School")
  Holberton?
  School
