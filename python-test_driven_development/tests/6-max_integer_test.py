@@ -1,5 +1,6 @@
 import unittest
-from 6-max_integer import max_integer    # import the real function
+max_integer = __import__('6-max_integer').max_integer
+
 
 class TestMaxInteger(unittest.TestCase):
     """Unit tests for max_integer()."""
@@ -12,8 +13,6 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_multiple_elements(self):
         self.assertEqual(max_integer([1, 3, 2, 4]), 4)
-
-    # add more test_ methods here...
 
 if __name__ == "__main__":
     unittest.main()
