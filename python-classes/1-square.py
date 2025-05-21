@@ -16,4 +16,4 @@ class square:
         Arguement:
         Size: the square size
     """
-    self.__size = size
+        self.__size = size
