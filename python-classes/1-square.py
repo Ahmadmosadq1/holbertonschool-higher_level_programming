@@ -11,8 +11,9 @@ class square:
     def __init__(self, size):
         """
         This is an intance initiolizer 
-        self.__size = size
+        
         
         Arguement:
         Size: the square size
     """
+    self.__size = size
