@@ -1,14 +1,11 @@
 #!/usr/bin/python3
 class Square:
-    """An empty class
-     Note:
-        None.
-
-    Args:
-       No arguments
+    """
+    Creating an empty class
 
     Attributes:
-        no attributes
-        """
+        attr (str): No attributes.
+
+    """
     pass
 
