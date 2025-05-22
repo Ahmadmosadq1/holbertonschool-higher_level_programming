@@ -48,8 +48,8 @@ class Square:
     def my_print(self):
         """ This is a public inctance method for printing squares of #"""
         if self.__size == 0:
-             print()
-             return
+            print()
+            return
 
         # vertical offset
         for _ in range(self.__position[1]):
@@ -57,7 +57,7 @@ class Square:
 
             # each row: horizontal spaces then hashes
         for _ in range(self.__size):
-            print(" " * self.__position[0] + "#" * self.__size)    
+            print(" " * self.__position[0] + "#" * self.__size)   
 
     @property
     def position(self):
