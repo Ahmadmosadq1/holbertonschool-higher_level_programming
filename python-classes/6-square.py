@@ -50,10 +50,14 @@ class Square:
         if self.__size == 0:
             print()
             return
-        for row in range(self.__size):
-            for col in range(self.__size):
-                print("#", end="")
+
+        # vertical offset
+        for _ in range(self.__position[1]):
             print()
+
+        # each row: horizontal spaces + hashes
+        for _ in range(self.__size):
+            print(" " * self.__position[0] + "#" * self.__size)
 
     @property
     def position(self):
@@ -72,3 +76,17 @@ class Square:
             raise TypeError(
                 "position must be a tuple of 2 positive integers")
         self.__position = value
+my_square_1 = Square(3)
+my_square_1.my_print()
+
+print("--")
+
+my_square_2 = Square(3, (1, 1))
+my_square_2.my_print()
+
+print("--")
+
+my_square_3 = Square(3, (3, 0))
+my_square_3.my_print()
+
+print("--")
