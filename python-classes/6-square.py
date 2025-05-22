@@ -61,15 +61,14 @@ class Square:
         return self.__position
 
     @position.setter
-def position(self, value):
-    """Validate and set the private position."""
-    if (
-        not isinstance(value, tuple)
-        or len(value) != 2
-        or not all(isinstance(num, int) for num in value)
-        or not all(num >= 0 for num in value)
-    ):
-        raise TypeError(
-            "position must be a tuple of 2 positive integers"
-        )
-    self.__position = value
+    def position(self, value):
+        """Validate and set the private position."""
+        if (
+            not isinstance(value, tuple)
+            or len(value) != 2
+            or not all(isinstance(num, int) for num in value)
+            or not all(num >= 0 for num in value)
+        ):
+            raise TypeError(
+                "position must be a tuple of 2 positive integers")
+        self.__position = value
