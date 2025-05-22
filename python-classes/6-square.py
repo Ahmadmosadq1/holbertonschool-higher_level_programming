@@ -9,7 +9,7 @@ class Square:
     Attributes:
         size (int): Represents the size of the square.
     """
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """
         This is an intance initiolizer
 
