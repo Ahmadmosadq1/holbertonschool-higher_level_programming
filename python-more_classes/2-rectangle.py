@@ -51,4 +51,15 @@ class Rectangle:
 
     def perimeter(self):
         """Method returns the perimeter of the rectangler"""
+        if self.height == 0 or self.width == 0:
+            """If height or weight is zero, the perimeter returns 0"""
+            return 0
         return 2 * (self.height + self.__width)
+
+my_rectangle = Rectangle(0, 0)
+print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+
+print("--")
+
+my_rectangle.width = 10
+my_rectangle.height = 3
