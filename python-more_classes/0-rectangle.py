@@ -4,7 +4,7 @@ it only passes
 """
 
 
-class rectangler:
+class Rectangle:
     """
     a class only passes with no methods
 
