@@ -55,11 +55,3 @@ class Rectangle:
             """If height or weight is zero, the perimeter returns 0"""
             return 0
         return 2 * (self.height + self.__width)
-
-my_rectangle = Rectangle(0, 0)
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
-
-print("--")
-
-my_rectangle.width = 10
-my_rectangle.height = 3
