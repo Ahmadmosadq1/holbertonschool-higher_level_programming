@@ -5,5 +5,5 @@ it only passes
 
 
 class rectangler:
-    "a class only passes with no methods"
+    """a class only passes with no methods"""
     pass
