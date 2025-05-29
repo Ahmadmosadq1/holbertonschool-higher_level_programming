@@ -10,7 +10,7 @@ def is_kind_of_class(obj, a_class):
 
     Arguments:
             Obj: an instance of a class
-            class: the object
+            a_class: the object
     raise:
             Not
 
