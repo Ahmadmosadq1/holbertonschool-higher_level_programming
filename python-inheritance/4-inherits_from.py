@@ -4,7 +4,7 @@ of its direct class
 """
 
 
-def is_kind_of_class(obj, a_class):
+def inherits_from(obj, a_class):
 
     """function takes two arguments . obj and a_class
 
