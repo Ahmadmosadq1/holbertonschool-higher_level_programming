@@ -3,4 +3,5 @@
 
 
 class BaseGeometry:
+    """ A class with no methods only Pass"""
     pass
