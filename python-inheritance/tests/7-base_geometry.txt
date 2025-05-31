@@ -11,4 +11,4 @@ TypeError: width must be an integer
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
     ...
-TypeError: my_int must be an integer
+TypeError: name must be an integer
