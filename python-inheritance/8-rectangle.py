@@ -16,14 +16,11 @@ class BaseGeometry:
             raise ValueError("{} must be greater than 0".format(name))
 
 
-"""Creating a class that inherits from BaseGeometry"""
-
-
 class Rectangle(BaseGeometry):
+    """Creating a class that inherits from BaseGeometry"""
     def __init__(self, width, height):
         """creating init method to create intances"""
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-
