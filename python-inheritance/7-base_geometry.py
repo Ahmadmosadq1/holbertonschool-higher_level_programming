@@ -8,12 +8,12 @@ class BaseGeometry:
         """a method raises an exception error if called"""
         raise Exception("area() is not implemented")
 
-    def integer_validator(self, name, vlaue):
+    def integer_validator(self, name, value):
         """height and width validation: the number must be integer and > 0"""
-        if not isinstance(type(value), int):
+        if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
-        if vlaue < 0:
-            raise ValueError("{} must be greater than 0".format(value))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
 
 
 """Creating a class that inherits from BaseGeometry"""
