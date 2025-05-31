@@ -24,3 +24,4 @@ class Rectangle(BaseGeometry):
         """creating init method to create intances"""
         self.__width = width
         self.__height = height
+        
