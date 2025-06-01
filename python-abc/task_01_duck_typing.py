@@ -7,10 +7,12 @@ class Shape(metaclass=ABCMeta):
     """the class has two abtracted methods. area and perimeter"""
     @abstractmethod
     def area(self):
+        """Calculate and return the area of the shape."""
         pass
 
     @abstractmethod
     def perimeter(self):
+        """Calculate and return the perimeter of the shape."""
         pass
 
 
@@ -60,9 +62,3 @@ def shape_info(shape):
     """duck typing method"""
     print("Area:", shape.area())
     print("perimeter:", shape.perimeter())
-
-circle = Circle(radius=5)
-rectangle = Rectangle(width=4, height=7)
-
-shape_info(circle)
-shape_info(rectangle)
