@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from abc import ABC, abstractmethod
+from abc import ABCMeta, abstractmethod
 import math
 
 
@@ -63,3 +63,10 @@ def shape_info(shape):
     """duck typing method"""
     print("Area:", shape.area())
     print("perimeter:", shape.perimeter())
+
+if __name__ == "__main__":
+    c = Circle(5)
+    r = Rectangle(4, 6)
+
+    shape_info(c)
+    shape_info(r)
