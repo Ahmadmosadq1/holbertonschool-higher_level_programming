@@ -57,15 +57,3 @@ class FlyingFish(Fish, Bird):
         Override both parents' habitat methods with a flying fish variant.
         """
         print("The flying fish lives both in water and the sky!")
-
-
-# Testing
-if __name__ == "__main__":
-    ff = FlyingFish()
-    ff.swim()       # The flying fish is swimming!
-    ff.fly()        # The flying fish is soaring!
-    ff.habitat()    # The flying fish lives both in water and the sky!
-
-    print("\nMethod Resolution Order (MRO):")
-    for cls in FlyingFish.__mro__:
-        print(cls)
