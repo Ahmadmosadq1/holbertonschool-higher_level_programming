@@ -16,7 +16,12 @@ class Shape(metaclass=ABCMeta):
 
 
 class Circle(Shape):
+    """
+    Circle shape class.
 
+    Parameters:
+        radius (float): The radius of the circle.
+    """
     def __init__(self, radius):
         """initilizing raduius"""
         self.radius = radius
@@ -31,6 +36,13 @@ class Circle(Shape):
 
 
 class Rectangle(Shape):
+    """
+    Rectangle shape class.
+
+    Parameters:
+        height (float): The height of the rectangle.
+        width (float): The width of the rectangle.
+    """
     def __init__(self, height, width):
         "initiolizing height and width "
         self.height = height
@@ -49,3 +61,9 @@ def shape_info(shape):
     """duck typing method"""
     print("Area:", shape.area())
     print("perimeter:", shape.perimeter())
+
+circle = Circle(radius=5)
+rectangle = Rectangle(width=4, height=7)
+
+shape_info(circle)
+shape_info(rectangle)
