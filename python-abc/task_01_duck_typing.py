@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-"""importing modules from abc"""
 from abc import ABCMeta, abstractmethod
 import math
 """creating an abstract class shape"""
