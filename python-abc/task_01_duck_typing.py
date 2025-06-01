@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 from abc import ABCMeta, abstractmethod
 import math
-"""creating an abstract class shape"""
 
 
 class Shape(metaclass=ABCMeta):
