@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 import math
 
 
-class Shape(metaclass=ABCMeta):
+class Shape(ABC):
     """the class has two abtracted methods. area and perimeter"""
 
     @abstractmethod
@@ -63,10 +63,3 @@ def shape_info(shape):
     """duck typing method"""
     print("Area:", shape.area())
     print("perimeter:", shape.perimeter())
-
-if __name__ == "__main__":
-    c = Circle(5)
-    r = Rectangle(4, 6)
-
-    shape_info(c)
-    shape_info(r)
