@@ -40,6 +40,11 @@ class Rectangle(Shape):
         """defining the area of the rectangular"""
         return self.height * self.width
 
-        def perimeter(self):
-            """perimeter the area of the rectangular"""
-            return 2 * (self.height + self.width)
+    def perimeter(self):
+        """perimeter the area of the rectangular"""
+        return 2 * (self.height + self.width)
+        
+def shape_info(shape):
+    """duck typing method"""
+    print("Area:", shape.area())
+    print("perimeter:", shape.perimeter())
