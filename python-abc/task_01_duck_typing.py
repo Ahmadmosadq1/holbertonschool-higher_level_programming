@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 import math
 
 
