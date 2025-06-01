@@ -5,6 +5,7 @@ import math
 
 class Shape(metaclass=ABCMeta):
     """the class has two abtracted methods. area and perimeter"""
+
     @abstractmethod
     def area(self):
         """Calculate and return the area of the shape."""
