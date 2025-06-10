@@ -15,4 +15,4 @@ def write_file(filename="", text=""):
     """
     with open(filename, 'w') as f:
         """opeining a file in a write mode"""
-        print(f.write(text))
+        f.write(text)
