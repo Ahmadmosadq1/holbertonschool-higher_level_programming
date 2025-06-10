@@ -11,7 +11,7 @@ def write_file(filename="", text=""):
         text (str): the content of the file to be writtent
 
     Returns:
-        None
+        f.write()
     """
     with open(filename, 'w') as f:
         """opeining a file in a write mode"""
