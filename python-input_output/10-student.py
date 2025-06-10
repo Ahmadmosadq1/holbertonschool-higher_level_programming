@@ -18,7 +18,7 @@ class Student:
         (and only if they exist). Otherwise include everything.
         """
         if isinstance(attrs, list) and all(isinstance(a, str) for a in attrs):
-            return{
+            return {
                 key: getattr(self, key)
                 for key in attrs
                 if hasattr(self, key)
