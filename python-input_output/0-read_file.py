@@ -14,4 +14,4 @@ def read_file(filename=""):
     """
     with open(filename, 'r') as f:
         """opeining a file in a read mode"""
-        print(f.read())
+        print(f.read(), end="")
