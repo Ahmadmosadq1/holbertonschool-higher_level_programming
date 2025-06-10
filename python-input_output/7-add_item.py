@@ -27,13 +27,19 @@ def main():
     """our main function"""
     filename = "add_item.json"
     """loading from jason objects"""
-    my_object = load_from_json_file(filename)
-    """extentding the arguemtn counts starting from 1postition  to infinity"""
-    my_object.extend(sys.argv[1:0])
-    """saving back to the Json file and it overwites it"""
-    save_to_json_file(my_object, filename)
-    print(my_object)
+    try:
+        "try loading from JSON if the file exists and contains valid data"
+        my_objects = load_from_json_file(filename)
+    except FileNotFoundError:
+        """if the file doesn’t exist, initialize an empty list"""
+        my_objects = []
 
+    """extentding the arguemtn counts starting from 1postition  to infinity"""
+    my_objects.extend(sys.argv[1:])
+
+    """saving back to the Json file and it overwites it"""
+    save_to_json_file(my_objects, filename)
+    print(my_objects)
 
 if __name__ == "__main__":
     main()
