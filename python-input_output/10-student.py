@@ -17,9 +17,9 @@ class Student:
         If attrs is a list of strings, only include those keys
         (and only if they exist). Otherwise include everything.
         """
-        if isinstance(attrs, list) and all (isinstance(a, str) for a in attrs):
+        if isinstance(attrs, list) and all(isinstance(a, str) for a in attrs):
             return{
-                key:getattr(self, key)
+                key: getattr(self, key)
                 for key in attrs
                 if hasattr(self, key)
             }
