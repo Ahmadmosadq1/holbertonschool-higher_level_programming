@@ -39,7 +39,6 @@ def main():
 
     """saving back to the Json file and it overwites it"""
     save_to_json_file(my_objects, filename)
-    print(my_objects)
 
 if __name__ == "__main__":
     main()
