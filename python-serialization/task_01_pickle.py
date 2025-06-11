@@ -30,11 +30,11 @@ class CustomObject:
             """opening a file in a write binary mode"""
             pickle.dump(self, f)
 
-        @classmethod
-        def deserialize(cls, filename):
-            """opening a file with read binary mode"""
-            try:
-                with open(filename, 'rb') as f:
-                    return pickle.load(f)
-            except(FileNotFoundError, pickle.UnpicklingError):
-                return None
+    @classmethod
+    def deserialize(cls, filename):
+        """opening a file with read binary mode"""
+        try:
+            with open(filename, 'rb') as f:
+                return pickle.load(f)
+        except(FileNotFoundError, pickle.UnpicklingError):
+            return None
