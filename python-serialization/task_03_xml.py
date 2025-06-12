@@ -24,12 +24,13 @@ def serialize_to_xml(dictionary, filename):
     tree = ET.ElementTree(root)
     tree.write(filename, xml_declaration=True)
 
-    def deserialize_from_xml(filename):
-        """deserilaze data from XML file"""
-        """parsing the xml file"""
-        tree = tree.parse(filename)
-        root = tree.getroot()
-        dictionary = {}
-        for child in root:
-            dictionary[child.tag] = child.text
-        return dictionary
+
+def deserialize_from_xml(filename):
+    """deserilaze data from XML file"""
+    """parsing the xml file"""
+    tree = ET.parse(filename)
+    root = tree.getroot()
+    dictionary = {}
+    for child in root:
+        dictionary[child.tag] = child.text
+    return dictionary
