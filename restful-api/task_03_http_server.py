@@ -43,6 +43,8 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-Type", "text/plain")
             self.end_headers()
+            message = "Endpoint not found.\n" + ("-" * 520)  # Force Chrome to display the message
+            self.wfile.write(message.encode())
 def running(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
     """
     this method runs the web server
