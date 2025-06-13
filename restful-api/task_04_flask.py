@@ -8,17 +8,6 @@ app = Flask(__name__)
 def home():
     return "Welcome to the Flask API!"
 
-users = {}
-"""In-memory store of users:
-Originally, examples were:
-{
-    "jane": {"username": "jane", "name": "Jane", "age": 28},
-    "bob":  {"username": "bob",  "name": "Bob",  "age": 25},
-    # …etc…
-}
-But start empty so GET /data returns [] initially.
-"""
-
 @app.route("/data")
 def get_users():
     """a function to reterive only usernams
