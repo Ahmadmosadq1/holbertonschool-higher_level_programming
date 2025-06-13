@@ -42,8 +42,8 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
         else:
             self.send_response(404)
             self.send_header("Content-Type", "text/plain")
+            self.send_header("Content-Length", "0")
             self.end_headers()
-            self.wfile.write(b"Not Found")
 def running(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
     """
     this method runs the web server
