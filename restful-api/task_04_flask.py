@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, abort
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 """app starts the flask applicaation"""
@@ -16,13 +16,13 @@ Originally, examples were:
     "bob":  {"username": "bob",  "name": "Bob",  "age": 25},
     # …etc…
 }
-But start empty for this API so GET /data returns [] initially.
+But start empty so GET /data returns [] initially.
 """
 
 @app.route("/data")
 def get_users():
     """a function to reterive only usernams
-    and then serilized using jsonfy
+    and then serilized using jsonify
     """
     names = list(users.keys())
     return jsonify(names)
@@ -34,7 +34,7 @@ def get_status():
 
 @app.route("/users/<username>")
 def find_users(username):
-    """finsing the sepcifc username but retriveing his name by get"""
+    """finsing the sepcifc username but retriveing his data by get"""
     user = users.get(username)
     if not user:
         return jsonify(error="User not found"), 404
@@ -43,12 +43,12 @@ def find_users(username):
 @app.route("/add_user", methods=["POST"])
 def add_user():
     """
-    Original comments:
+    Original comments intended:
     # no JSON at all
     # username field is required
     # avoid overwriting existing user
     # store the new user object under its username
-    # return a confirmation with the added data
+    # return the new user object
     """
     data = request.get_json()
     if data is None:
@@ -67,8 +67,8 @@ def add_user():
     """store the new user object under its username"""
     users[username] = data
 
-    """return a confirmation with the added data"""
-    return jsonify(message="User added successfully", user=data), 201
+    """return the new user object (bare) with status 201"""
+    return jsonify(data), 201
 
 if __name__ == "__main__":
     """Run the Flask development server on port 5000."""
