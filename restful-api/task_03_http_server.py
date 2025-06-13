@@ -43,8 +43,7 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self.send_response(404)
             self.send_header("Content-Type", "text/plain")
             self.end_headers()
-            message = "Endpoint not found.\n"
-            self.wfile.write(message.encode())
+            self.wfile.write(b"Endpoint not found")
 def running(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
     """
     this method runs the web server
