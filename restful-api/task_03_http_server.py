@@ -28,8 +28,7 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             json_dict = {"name": "John", "age": 30, "city": "New York"}
             content = json.dumps(json_dict).encode('utf-8')
             self.send_response(200)
-            self.send_header("Content-Type", "application/json; charset=utf-8")
-            self.send_header("Content-Length", str(len(content)))
+            self.send_header("Content-Type", "application/json")
             self.end_headers()
             self.wfile.write(content)
 
@@ -37,7 +36,7 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
         elif self.path == "/status":
             """for status page"""
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.send_header("Content-Type", "text/plain")
             self.end_headers()
             self.wfile.write(b'OK')
         
