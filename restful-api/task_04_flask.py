@@ -1,5 +1,5 @@
-from flask import Flask, request, jsonify
-
+from flask import Flask
+from flask import jsonify
 app = Flask(__name__)
 """app starts the flask applicaation"""
 
@@ -7,62 +7,49 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return "Welcome to the Flask API!"
-
 @app.route("/data")
 def get_users():
     """a function to reterive only usernams
-    and then serilized using jsonify
+    and then serilized using jsonfy
     """
-    return jsonify(list(users.keys()))
+    names = list(users.keys())
+    return jsonify(names)
 
 @app.route("/status")
 def get_status():
     """returns the status"""
-    return "OK"
+    return "OK", 200
 
 @app.route("/users/<username>")
 def find_users(username):
-    """finsing the sepcifc username but retriveing his data by get"""
+    """finsing the sepcifc username but retriveing his name by get"""
     user = users.get(username)
-    if not user:
-        return jsonify({"error": "User not found"}), 404
     return jsonify(user)
-
 @app.route("/add_user", methods=["POST"])
 def add_user():
-    """
-    Original comments intended:
-    # no JSON at all
-    # username field is required
-    # avoid overwriting existing user
-    # store the new user object under its username
-    # return the new user object
-    """
-    if not request.is_json:
-        """no JSON at all"""
-        return jsonify({"error": "Missing JSON body"}), 400
-
     data = request.get_json()
-    if not data or "username" not in data:
-        """username field is required"""
-        return jsonify({"error": "username is required"}), 400
+    if not data:
+        # no JSON at all
+        abort(400, description="Missing JSON body")
 
-    username = data["username"]
+    username = data.get("username")
+    if not username:
+        # username field is required
+        abort(400, description="username is required")
+
     if username in users:
-        """avoid overwriting existing user"""
-        return jsonify({"error": "User already exists"}), 409
+        # avoid overwriting existing user
+        abort(409, description="User already exists")
 
-    """store the new user object under its username"""
-    user_data = {
-        "username": username,
-        "name": data.get("name"),
-        "age": data.get("age")
-    }
-    users[username] = user_data
+    # store the new user object under its username
+    users[username] = data
 
-    """return the new user object (bare) with status 201"""
-    return jsonify(user_data), 201
+    # return a confirmation with the added data
+    return jsonify({
+        "message": "User added successfully",
+        "user": data
+    }), 201
 
-if __name__ == "__main__":
-    """Run the Flask development server on port 5000."""
-    app.run(port=5000)
+
+if __name__ == "__main__": 
+    app.run()
