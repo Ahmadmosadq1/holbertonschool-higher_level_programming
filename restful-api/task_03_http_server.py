@@ -40,7 +40,7 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b'OK')
         else:
-            self.send_response(404)
+            self.send_response("{404} Not Found")
             self.send_header("Content-Type", "text/plain")
             self.send_header("Content-Length", "0")
             self.end_headers()
