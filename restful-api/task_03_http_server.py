@@ -39,10 +39,11 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "text/plain")
             self.end_headers()
             self.wfile.write(b'OK')
-        
         else:
-            self.send_error(404, "Not Found")
-    
+            self.send_response(404)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Not Found")
 def running(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
     """
     this method runs the web server
@@ -54,6 +55,9 @@ def running(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
     server = server_class(("", port), handler_class)
 
     """# start handling requests in an infinite loop"""
+
+    print(f"Listening on http://localhost:{port}/")
+
     server.serve_forever()
 
 if __name__=="__main__":
