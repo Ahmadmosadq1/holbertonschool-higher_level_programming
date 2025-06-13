@@ -50,11 +50,11 @@ def add_user():
     # store the new user object under its username
     # return the new user object
     """
-    data = request.get_json()
-    if data is None:
+    if not request.is_json:
         """no JSON at all"""
         return jsonify(error="Missing JSON body"), 400
 
+    data = request.get_json()
     username = data.get("username")
     if not username:
         """username field is required"""
@@ -65,10 +65,15 @@ def add_user():
         return jsonify(error="User already exists"), 409
 
     """store the new user object under its username"""
-    users[username] = data
+    user_data = {
+        "username": username,
+        "name": data.get("name", ""),
+        "age": data.get("age")
+    }
+    users[username] = user_data
 
     """return the new user object (bare) with status 201"""
-    return jsonify(data), 201
+    return jsonify(user_data), 201
 
 if __name__ == "__main__":
     """Run the Flask development server on port 5000."""
