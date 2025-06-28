@@ -1,3 +1,4 @@
+-- shows by geners
 SELECT
   tv_shows.title   AS title,
   tv_genres.name   AS name
