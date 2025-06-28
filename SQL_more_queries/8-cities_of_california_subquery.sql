@@ -1,5 +1,4 @@
 -- Listing cities of cali
-
 SELECT name
 FROM cities
 WHERE state_id = (
