@@ -13,5 +13,3 @@ LEFT JOIN
 ORDER BY
   tv_shows.title,
   tv_genres.name;
-
-name
