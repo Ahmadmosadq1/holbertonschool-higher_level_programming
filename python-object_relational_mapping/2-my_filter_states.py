@@ -23,9 +23,7 @@ if __name__ == "__main__":
         "ORDER BY id ASC"
             ).format(sys.argv[4]))
     for state in cursor.fetchall():
-        """fetchall gets the results in a tuple(number, state)
-        we should focus on the stats index...that is tuple[1]
-        """
+        # fetchall gets the results in a tuple(number, state) we should focus on the stats index...that is tuple[1] 
         print(state)
     cursor.close()
     db.close()
