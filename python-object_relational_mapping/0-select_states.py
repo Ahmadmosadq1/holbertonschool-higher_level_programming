@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 0. Get all states
 Lists all states from the given MySQL database.
