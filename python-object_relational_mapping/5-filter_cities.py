@@ -8,7 +8,8 @@ import sys
 
 if __name__ == "__main__":
     # Get credentials and target state from arguments
-    user, passwd, db_name, state_name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+    user, passwd, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
+    state_name = sys.argv[4]
 
     # Connect to MySQL
     db = MySQLdb.connect(
