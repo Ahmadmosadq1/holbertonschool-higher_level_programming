@@ -1,35 +1,25 @@
 #!/usr/bin/env python3
-"""a Scrpit to connect to MySQLdb and writes to it"""
+"""
+0. Get all states
+Lists all states from the given MySQL database.
+"""
+
 import MySQLdb
 import sys
 
-def main():
-    """taking username, password and database as arguments"""
-    mysql_user = sys.argv[1]
-    mysql_pass = sys.argv[2]
-    db_name = sys.argv[3]
-
-    """setting up the db connection"""
+if __name__ == "__main__":
+    # connect using exactly sys.argv[1], [2], [3]
     db = MySQLdb.connect(
-        host = 'localhost',
-        port = 3306,
-        user = mysql_user,
-        passwd = mysql_pass,
-        db = db_name
+        host="localhost",
+        port=3306,
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
     cursor = db.cursor()
-    query = "SELECT * FROM states ORDER BY states.id ASC"
-    cursor.execute(query)
-
-    """fetching the query result"""
-
-    for record in cursor.fetchall():
-        print(record)
+    # they expect this exact query
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    for state in cursor.fetchall():
+        print(state)
     cursor.close()
     db.close()
-
-if __name__ == "__main__":
-    main() 
-
-
-
