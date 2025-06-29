@@ -17,12 +17,11 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
     # they expect this exact query
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(sys.argv[4]))
     for state in cursor.fetchall():
         """fetchall gets the results in a tuple(number, state)
         we should focus on the stats index...that is tuple[1]
         """
-        if state[1] == sys.argv[4]:
-            print(state)
+        print(state)
     cursor.close()
     db.close()
