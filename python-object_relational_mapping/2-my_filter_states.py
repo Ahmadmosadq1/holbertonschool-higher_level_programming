@@ -1,33 +1,31 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+
 """
 2. Filter states by user input
 """
-import sys
 import MySQLdb
+import sys
 
 if __name__ == "__main__":
-    # no arg checking needed per spec
-    user, pw, db_name, state_name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
-
+    # connect using exactly sys.argv[1], [2], [3]
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=user,
-        passwd=pw,
-        db=db_name
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
     cursor = db.cursor()
-
-    # exact SQL pattern with format for the 4th arg
+    # they expect this exact query
     query = (
         "SELECT * FROM states "
         "WHERE name = '{}' "
         "ORDER BY id ASC"
-    ).format(state_name)
-    cursor.execute(query)
-
-    for row in cursor.fetchall():
-        print(row)
-
+            ).format(sys.argv[4])
+    for state in cursor.fetchall():
+        """fetchall gets the results in a tuple(number, state)
+        we should focus on the stats index...that is tuple[1]
+        """
+        print(state)
     cursor.close()
     db.close()
