@@ -20,7 +20,7 @@ if __name__ == "__main__":
     cursor.execute((
         "SELECT * FROM states "
         "WHERE name = '{}' "
-        "ORDER BY id ASC"
+        "ORDER BY states.id ASC"
             ).format(sys.argv[4]))
     for state in cursor.fetchall():
         """fetchall gets the results in a tuple(number, state)
