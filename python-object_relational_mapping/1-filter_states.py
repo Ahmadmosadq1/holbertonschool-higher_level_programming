@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """
 1. Filter states
 """
@@ -25,4 +27,3 @@ if __name__ == "__main__":
             print(state)
     cursor.close()
     db.close()
-    
