@@ -22,6 +22,7 @@ if __name__ == "__main__":
         "WHERE name = '{}' "
         "ORDER BY id ASC"
             ).format(sys.argv[4])
+    cursor.execute(query)
     for state in cursor.fetchall():
         """fetchall gets the results in a tuple(number, state)
         we should focus on the stats index...that is tuple[1]
