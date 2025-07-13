@@ -4,7 +4,7 @@ function add (a, b) {
 }
 const { argv } = require('node:process');
 if (!argv[3]) {
-  console.log('NAN');
+  console.log('NaN');
 } else {
   const a = Number(argv[2]);
   const b = Number(argv[3]);
