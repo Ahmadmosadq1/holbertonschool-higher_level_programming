@@ -48,3 +48,5 @@ with open('template.txt', 'r') as file:
     template_content = file.read()
 generate_invitations(template_content, attendees)
 
+
+
