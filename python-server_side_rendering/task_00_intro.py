@@ -13,7 +13,7 @@ def generate_invitations(template_content, attendees):
             print("Error: Atensees must be a list of dictionaries")
             return
     
-        if template_content.strip == "":
+        if template_content.strip() == "":
             print("Error: content is empty")
             return
         
