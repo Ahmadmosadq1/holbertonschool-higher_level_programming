@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-from task_02_logic import item_list
 
 app = Flask(__name__)
 
