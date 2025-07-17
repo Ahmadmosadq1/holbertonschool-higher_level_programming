@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import task_02_logic
 
 app = Flask(__name__)
 
@@ -14,6 +15,11 @@ def about():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
+@app.route('/items')
+def item():
+    data = task_02_logic.item_list
+    return render_template('items.html', items = data)
 
 if __name__ == '__main__':
      app.run(debug=True, port=5000)

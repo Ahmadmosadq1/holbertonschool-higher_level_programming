@@ -1,0 +1,9 @@
+<title>Items List</title>
+
+<ul>
+{% for item in items %}
+<li>{{item}}</li>
+{% else %}
+<li>file is empty</li>
+{% endfor %}
+</ul>
