@@ -3,7 +3,7 @@ from flask import Flask, render_template
 
 with open('items.json', 'r') as file:
     content = json.load(file)
-item_list = content['items']
+item_list = content.get("items", [])
 
 
 app = Flask(__name__)
