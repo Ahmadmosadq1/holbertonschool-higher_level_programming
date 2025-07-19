@@ -38,7 +38,7 @@ def products():
     except Exception as e:
         error = "Error reading file: " + str(e)
 
-    return render_template("product_display.html", items=item_list, error=error)
+    return render_template("product_display.html", items=item_list), 200
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000, use_reloader=False)
